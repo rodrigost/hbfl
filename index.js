@@ -2,7 +2,7 @@ const Hapi = require('@hapi/hapi')
 const plugins = require('./plugins')
 const routes = require('./routes')
 const { init: usersInit } = require('./lib/data/users')
-const { init: queueInit } = require('./lib/data/lib/sqs.listener')
+//const { init: queueInit } = require('./lib/data/lib/sqs.listener')
 
 const options = {
   port: process.env.PORT || 3000,
