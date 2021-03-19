@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
 
   entry: {
     application: './app/index.jsx'
@@ -36,8 +36,7 @@ module.exports = {
   },
 
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    minimizer: [new UglifyJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
 
   output: {
