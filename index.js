@@ -5,9 +5,9 @@ const { init: usersInit } = require('./lib/data/users')
 //const { init: queueInit } = require('./lib/data/lib/sqs.listener')
 
 const options = {
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3000
   // // Commented out until Elasticache is configured
-  // cache: [{
+  // ,cache: [{
   //   name: 'redis',
   //   provider: {
   //     constructor: require('@hapi/catbox-redis'),
@@ -54,6 +54,12 @@ const init = async () => {
       }
     }
   })
+
+  server.events.on('log', (event, tags) => {
+    if (tags.error) {
+        console.log(event);
+    }
+  });
 
   server.auth.default('session')
 

@@ -1,4 +1,4 @@
-const base = 'https://hamster-bucket-rst.s3.eu-central-1.amazonaws.com'
+const base = '/public'
 module.exports = {
   hamster1: base + '/images/hamster-1-final.png',
   hamster2: base + '/images/hamster-2-final.png',

@@ -86,7 +86,7 @@ function createKeyPair (keyName) {
 
 function createInstance (sgName, keyName) {
   const params = {
-    ImageId: 'ami-0460addb6ffcb6a9a', //12.20.2
+    ImageId: 'ami-0d37ac8f69da13431', //15.11.0-0 // ami-0460addb6ffcb6a9a', //12.20.2
     InstanceType: 't2.micro',
     KeyName: keyName,
     MaxCount: 1,
