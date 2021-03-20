@@ -100,7 +100,7 @@ function upload (file, ip) {
     client.scp(file, {
       host: ip,
       username: 'bitnami',
-      privateKey: require('fs').readFileSync(path.join(os.homedir(), '.ssh', 'hamster_key')),
+      privateKey: fs.readFileSync(path.join(os.homedir(), '.ssh', 'hamster_key')),
       path: '/home/bitnami/'
     },
     myClient,
@@ -122,7 +122,7 @@ function unpack (ip) {
     exec(command, {
       user: 'bitnami',
       host: ip,
-      key: require('fs').readFileSync(path.join(os.homedir(), '.ssh', 'hamster_key'))
+      key: fs.readFileSync(path.join(os.homedir(), '.ssh', 'hamster_key'))
     }).pipe(process.stdout)
   })
 }
